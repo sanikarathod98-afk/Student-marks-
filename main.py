@@ -45,3 +45,21 @@ with open(file_name,"a", newline="") as file:
         result
     ])
 print("\nResult has been saved to student_results.csv") 
+def calculate_cgpa(marks):
+    total = sum(marks)
+    average = total / len(marks)
+    cgpa = average / 10
+    return cgpa
+marks = []
+
+n = int(input("Enter number of subjects: "))
+
+for i in range(n):
+    mark = float(input(f"Enter marks for subject {i + 1}: "))
+    marks.append(mark)
+
+cgpa = calculate_cgpa(marks)
+
+print("\n--- Student Marks Analyzer ---")
+print("Marks:", marks)
+print("CGPA:", round(cgpa, 2))
